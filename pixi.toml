@@ -1,0 +1,36 @@
+[workspace]
+authors = ["Arturo Argueta <javaagui@iu.edu>"]
+channels = ["conda-forge", "pytorch", "nvidia"]
+name = "dashcam"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.12.13,<3.13"
+numpy = "<2"
+opencv = ">=4.13.0,<5"
+pytorch = ">=2.10.0,<3"
+torchvision = ">=0.25.0,<0.26"
+ultralytics = ">=8.4.32,<9"
+tqdm = ">=4.67.3,<5"
+matplotlib = ">=3.10.8,<4"
+transformers = ">=5.4.0,<6"
+pillow = ">=12.1.1,<13"
+pyyaml = ">=6.0.3,<7"
+scikit-image = ">=0.26.0,<0.27"
+pandas = ">=2.2.3,<3"
+scikit-learn = ">=1.8.0,<2"
+xgboost = ">=3.2.0,<4"
+gdown = ">=6.0.0,<7"
+
+[system-requirements]
+cuda = "12.4"
+
+[pypi-dependencies]
+prefetch-generator = ">=1.0.3, <2"
+opencv-python-headless = "*"
+yacs = ">=0.1.8, <0.2"
+tensorboard = ">=2.20.0, <3"
+lap = ">=0.5.13, <0.6"
