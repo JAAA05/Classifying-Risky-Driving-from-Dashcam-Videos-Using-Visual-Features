@@ -67,7 +67,9 @@ def load_dataset(base_dir):
     return pd.DataFrame(data), np.array(labels), filenames
 
 def main():
-    base_dir = "data/processed/2026--04-20_split_random"
+    base_dir = "data/processed/2026-04-20"
+    # base_dir = "data/processed/2026-04-20_split"
+    # base_dir = "data/processed/2026-04-20_split_random"
     print("Extracting video-level features...")
     X, y, filenames = load_dataset(base_dir)
     
