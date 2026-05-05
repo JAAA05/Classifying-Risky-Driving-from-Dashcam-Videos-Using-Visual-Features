@@ -44,8 +44,8 @@ def split_csv_randomized(input_dir, output_dir, n_splits=2, random_seed=42):
                     print(f"Exported (Randomized): {save_path}")
 
 # Configuration
-INPUT_PATH = '/media/carlos/Data/S1S2/Academy/Arturo/dashcam/data/processed/2026--04-20'
-OUTPUT_PATH = '/media/carlos/Data/S1S2/Academy/Arturo/dashcam/data/processed/2026--04-20_split_random'
+INPUT_PATH = 'data/processed/2026-04-20'
+OUTPUT_PATH = 'data/processed/2026-04-20_split_random'
 N = 2 
 
 if __name__ == "__main__":
