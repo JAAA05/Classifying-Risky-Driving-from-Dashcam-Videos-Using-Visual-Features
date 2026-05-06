@@ -23,9 +23,7 @@ from sklearn.utils.class_weight import compute_sample_weight
 warnings.filterwarnings("ignore")
 
 
-# =========================
 # CONFIG
-# =========================
 
 BASE_DIR = "data/processed/2026--04-20_split"
 MODEL_DIR = "src/models"
@@ -39,9 +37,7 @@ TEST_SIZE = 0.20
 THRESHOLDS = np.arange(0.20, 0.71, 0.05)
 
 
-# =========================
 # FEATURE EXTRACTION
-# =========================
 
 def safe_numeric_col(df, col, default=0.0):
     """
@@ -160,10 +156,7 @@ def load_dataset(base_dir):
 
     return X, y, np.array(file_paths)
 
-
-# =========================
 # THRESHOLD TUNING
-# =========================
 
 def get_oof_probabilities(model, X_train, y_train):
     """
@@ -243,9 +236,7 @@ def find_best_threshold(y_true, probs):
     return best_threshold, results
 
 
-# =========================
 # MAIN TRAINING
-# =========================
 
 def main():
     print("Extracting video-level features...")
@@ -340,9 +331,7 @@ def main():
     # Evaluate default threshold
     y_pred_default = (test_probs >= 0.50).astype(int)
 
-    print("\n==============================")
     print("Evaluation with default threshold = 0.50")
-    print("==============================")
     print(classification_report(
         y_test,
         y_pred_default,
@@ -355,9 +344,7 @@ def main():
     # Evaluate tuned threshold
     y_pred_tuned = (test_probs >= best_threshold).astype(int)
 
-    print("\n==============================")
     print(f"Evaluation with tuned threshold = {best_threshold:.2f}")
-    print("==============================")
     print(classification_report(
         y_test,
         y_pred_tuned,
